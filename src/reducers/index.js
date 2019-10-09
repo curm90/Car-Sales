@@ -27,11 +27,14 @@ export const vehicleReducer = (state = initialVehicleState, action) => {
         features: state.features.filter(({ id }) => id !== action.item.id)
       };
     case ADD_FEATURE:
-      return {
-        ...state,
-        additionalPrice: state.additionalPrice + action.item.price,
-        features: [...state.features, action.item]
-      };
+      if (!state.features.includes(action.item)) {
+        return {
+          ...state,
+          additionalPrice: state.additionalPrice + action.item.price,
+          features: [...state.features, action.item]
+        };
+      }
+      return state;
     default:
       return state;
   }
