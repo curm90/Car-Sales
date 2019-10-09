@@ -13,10 +13,10 @@ const App = ({ shop, vehicle, removeFeature, addFeature }) => {
     <div className='boxes'>
       <div className='box'>
         <Header car={vehicle.car} />
-        <AddedFeatures car={vehicle} />
+        <AddedFeatures car={vehicle} removeFeature={removeFeature} />
       </div>
       <div className='box'>
-        <AdditionalFeatures store={shop} />
+        <AdditionalFeatures store={shop} addFeature={addFeature} />
         <Total car={vehicle.car} additionalPrice={vehicle.additionalPrice} />
       </div>
     </div>
