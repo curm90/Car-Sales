@@ -1,18 +1,18 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 
-const AdditionalFeatures = props => {
+const AdditionalFeatures = ({ shop, addFeature }) => {
   // debugger;
   return (
     <div className='content'>
       <h4>Additional Features</h4>
-      {props.shop.length ? (
+      {shop.length ? (
         <ol type='1'>
-          {props.shop.map(item => (
+          {shop.map(item => (
             <AdditionalFeature
               key={item.id}
               feature={item}
-              addFeature={props.addFeature}
+              addFeature={addFeature}
             />
           ))}
         </ol>
