@@ -23,7 +23,19 @@ const App = ({ shop, vehicle, removeFeature, addFeature }) => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    shop: state.shop,
+    vehicle: state.vehicle
+  };
+};
+
 export default connect(
-  state => state,
+  mapStateToProps,
   { removeFeature, addFeature }
 )(App);
+
+// export default connect(
+//   state => state,
+//   { removeFeature, addFeature }
+// )(App);
