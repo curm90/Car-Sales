@@ -1,14 +1,19 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 
-const AdditionalFeatures = props => {
+const AdditionalFeatures = ({ shop, addFeature }) => {
+  // debugger;
   return (
-    <div className="content">
+    <div className='content'>
       <h4>Additional Features</h4>
-      {props.store.length ? (
-        <ol type="1">
-          {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
+      {shop.length ? (
+        <ol type='1'>
+          {shop.map(item => (
+            <AdditionalFeature
+              key={item.id}
+              feature={item}
+              addFeature={addFeature}
+            />
           ))}
         </ol>
       ) : (
